@@ -1,20 +1,18 @@
-# 一级标题
-## 二级标题
+# pr1
 
-**粗体**  正常文字  `行内代码`
+![build](https://github.com/meijian07/pr1/actions/workflows/build.yml/badge.svg)
 
-- 列表项
-- 列表项
+一个练 C++ 工程化的最小项目：CMake 多文件构建 + GitHub Actions 自动编译。
 
-1. 有序列表
-2. 有序列表
-
-[链接文字](https://example.com)
-
-| 表头 | 表头 |
-|---|---|
-| 单元格 | 单元格 |
+## 怎么编译
 
 ```bash
-git status
-```
+cmake -S . -B build
+cmake --build build
+
+##怎么用
+```bash
+./build/app
+
+技术栈
+c++17+CMake+GitHub Actions

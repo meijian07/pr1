@@ -7,14 +7,16 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-laatest
-   
-  steps:
-    - name: 拉取代码
-      uses: actions/checkout@v4
+    runs-on: ubuntu-latest
+    steps:
+      - name: 拉取代码
+        uses: actions/checkout@v4
 
-    - name: 配置
-      run: camke -S .-B build
+      - name: 配置
+        run: cmake -S . -B build
 
-    - name: 编译
-      run: cmake --build build
+      - name: 编译
+        run: cmake --build build
+
+      - name: 冒烟测试
+        run: ./build/app
