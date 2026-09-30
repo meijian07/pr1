@@ -1,0 +1,20 @@
+name: build
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-laatest
+   
+  steps:
+    - name: 拉取代码
+      uses: actions/checkout@v4
+
+    - name: 配置
+      run: camke -S .-B build
+
+    - name: 编译
+      run: cmake --build build
